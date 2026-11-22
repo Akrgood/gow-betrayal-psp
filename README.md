@@ -1,141 +1,112 @@
-# God of War: Betrayal Remastered
+# God of War: Betrayal — PSP port
 
-![God of War: Betrayal Remastered](.github/social-preview.jpg)
+A native PlayStation Portable port of the 2007 J2ME game *God of War: Betrayal*. It reuses the translated C++ game logic from [samioan/gow-betrayal-remastered](https://github.com/samioan/gow-betrayal-remastered) (commit `bad458d`) and replaces the Windows platform layer with a PSP one. No Java emulator is involved.
 
-A native Windows port of *God of War: Betrayal*, the 2007 side-scrolling
-*God of War* made for J2ME (mobile Java) phones. It is rebuilt from the
-original game's own decompiled code, not emulated, and adds widescreen, high
-frame rates and modern controls.
+The game data is **not** included. You supply your own copy of the Sony Ericsson K800i JAR, MIDlet version **1.4.20**.
 
-**Status: complete.** The game is finished, released as the stable 1.0.0, and
-has been played from start to finish. The project is no longer in active
-development, though new features may still arrive as occasional updates, and
-the launcher will pick those up automatically.
+## Contents
 
-| Original | Launcher | You supply |
-|---|---|---|
-| Sony Ericsson K800i build, 240x320, MIDlet 1.4.20 | `GodOfWar.exe` | `God-of-War-Betrayal_K800i_v1420.jar` (any copy of that build) |
-
-## Download and play
-
-**The game is not included.** It belongs to its rights holders, so you need
-your own copy of the K800i `.jar`. Other versions of the game are not
-supported, and the launcher tells you if you pick one.
-
-1. Download the zip from the
-   [Releases page](https://github.com/samioan/gow-betrayal-remastered/releases)
-   and unzip it anywhere.
-2. Run **GodOfWar.exe** and click **Choose file...** to pick your `.jar`. The
-   launcher unpacks it for you.
-3. Choose **Fullscreen** or **Windowed** and press **Play**.
-
-There is no installer, and no Visual C++ redistributable is needed. The
-launcher checks GitHub for newer builds on start-up, offers an **Update**
-button when there is one, and keeps your saves.
-
-### What the port adds
-
-| | |
+| Path | What it holds |
 |---|---|
-| Widescreen | Original, Auto, 4:3, 16:10, 16:9, 21:9 |
-| Frame rate | Original, 60, 90, 120, 144, 165, 240, Unlimited, with interpolated frames |
-| Game speed | Stays at the original 25 logic steps a second |
-| Fullscreen | Borderless by default; F11 or Alt+Enter toggles it |
-| Controls | Keyboard and XInput gamepad |
+| `src/` | Shared game core, software renderer and Java runtime shims |
+| `src/gen/` | Generated C++ translated from the decompiled Java (do not edit) |
+| `psp/` | PSP entry point, audio, intro, localization and build scripts |
+| `tools/gow_psp_patches.py` | Build-time adaptation of the generated game code |
+| `third_party/stb/` | `stb_image` (public domain / MIT) |
+| `dist/EBOOT.PBP` | Prebuilt executable, including optional XMB menu artwork |
 
-Widescreen shows more of the level and never stretches sprites or the HUD.
-The options are in **Main menu > Options** and in the pause menu. The zip's
-`README.txt` covers the controls.
+Windows-only sources from the upstream PC port are intentionally omitted. Generated files are produced from `names.map` and the patch scripts; see `tools/gow_psp_patches.py` and `psp/gen_locales.py`.
 
-### Troubleshooting
+## Play on a PSP
 
-The music and sound effects are MIDI, played through the Windows synthesizer,
-so they sound different from an emulator or the phone; that is expected.
-Sound problems are logged to `%LOCALAPPDATA%\gow-betrayal-port\audio.log`.
+1. Copy the contents of `dist/` into `PSP/GAME/GOWBETRAYAL/` on the memory stick (or `PSP/GAME/` on internal storage for a PSP Go). A firmware that allows unsigned homebrew is required.
+2. Extract the banks from your JAR into the same folder:
 
-Game files stay in `data\` next to the launcher. Saves and display settings
-live in `%LOCALAPPDATA%\gow-betrayal-port\`. To uninstall, delete the game's
-folder, and delete that one too if you want to remove your saves.
+   ```sh
+   python3 psp/prepare_data.py God-of-War-Betrayal_K800i_v1420.jar PSP/GAME/GOWBETRAYAL
+   ```
 
-## How it was made
+3. Launch **Game → Memory Stick → God of War: Betrayal**.
 
-The game is plain JVM bytecode with minifier-style obfuscation, so
-[Vineflower](https://github.com/Vineflower/vineflower) recovers close-to-original
-Java directly. From there the code was read through and renamed, and the
-game's custom binary formats (resource banks, sprite atlases, animation sets,
-bit-packed levels) were parsed and verified byte for byte.
+`prepare_data.py` verifies the JAR version and the RP19 layout, then writes exactly 31 unmodified resource banks into `data/`. An optional `INTRO.BIN` placed next to `EBOOT.PBP` plays before the game; press **Start** or **Cross** to skip it.
 
-The port is translated mechanically: `tools/java2cpp.py` turns the renamed
-Java into C++, and a hand-written engine and platform layer sit underneath.
-Patches for widescreen, settings and interpolation are applied during
-translation (`tools/gow_port_patches.py`), so the renamed Java stays a plain
-decompile. It is C++17 on raw Win32 and GDI, with no SDL, Direct3D or OpenGL.
+Saves are written to `GOWBETRAYAL/saves/`. Replace only `EBOOT.PBP` when updating, so progress is kept.
 
-The project started on the generic v1.4.8 jar and moved to the Sony Ericsson
-K800i build, which has larger 22 px tiles, a parallax background in every
-level, better art and all eleven MIDI tracks in use.
+### PPSSPP
 
-## Repository layout
+Open `dist/EBOOT.PBP` with **File → Load**, after running `prepare_data.py` against the `dist/` folder as well. Do not launch it from a path containing `PSP/GAME`: PPSSPP interprets that as a path on its own virtual memory stick. Verified with PPSSPP 1.20.4. For a crisp pixel grid use an integer window scale and **Nearest** texture filtering.
 
-| Path | Contents |
+## Controls
+
+| PSP | Action |
 |---|---|
-| `betrayal/decompiled/` | Raw Vineflower output |
-| `betrayal/src/` | Renamed, compile-checked Java (generated from `names.map`) |
-| `betrayal/docs/` | Roadmaps, class map, asset formats and `names.map` |
-| `betrayal/port/` | The C++ port, launcher and packaging scripts |
-| `tools/` | Extraction, decompilation, renaming, parsing and translation scripts |
-| `roms/`, `betrayal/extracted/` | Your original jar and its contents (gitignored, never commit) |
+| D-pad / analog stick | Move; navigate menus |
+| Cross | Jump; confirm in menus; skip intro |
+| Square | Attack |
+| Circle | Block / interact; back in menus |
+| Triangle / R | Cycle weapon or magic |
+| L / Select | Upgrade screen |
+| Start | Pause |
 
-### Documentation
+## Display and performance
 
-| Topic | File |
-|---|---|
-| Reverse-engineering record | [ROADMAP](betrayal/docs/ROADMAP.md) |
-| Port development log | [PORT_ROADMAP](betrayal/docs/PORT_ROADMAP.md) |
-| Classes and members | [CLASS_MAP](betrayal/docs/CLASS_MAP.md) |
-| Binary formats | [ASSET_FORMATS](betrayal/docs/ASSET_FORMATS.md) |
-| Store page copy | [ITCH_PAGE](betrayal/docs/ITCH_PAGE.md) |
+Rendering is **480×272, 1:1**: sprites, tiles and fonts are not resampled. The camera and UI are adapted to the shorter screen instead of stretching the phone's 240×320 canvas. The default pacing keeps the original 25 logic steps per second with up to 25 drawn frames; a 30 fps interpolated mode is available in the in-game options.
 
-The scripts are described in [tools/README.md](tools/README.md).
+The build sets `MEMSIZE=0`, requests a 16 MiB heap and uses two 8888 framebuffers of about 1.06 MiB total from the 2 MiB VRAM. It does not request the 64 MB mode and does not change the CPU clock. The configuration targets the 32 MB **PSP-1000**; the 25 fps mode is recommended there.
 
-## Building from source
+Frame times have only been measured in PPSSPP. Speed and stability on a physical PSP-1000 have not been validated yet.
 
-You need Windows, Visual Studio or the VS Build Tools with the C++ workload,
-CMake and Ninja. Regenerating sources also needs Python 3.10+ (`pip install
-javalang`) and a Java 17+ JDK (see [tools/README.md](tools/README.md)).
+## Audio
 
-```
-python tools\extract_jar.py          & rem unpack your jar from roms\
-python tools\decompile.py
-python tools\rename_gow.py           & rem renamed Java -> betrayal\src + compile check
-python tools\java2cpp.py             & rem -> betrayal\port\src\gen
-betrayal\port\build.bat              & rem builds betrayal\port\build\gow_port.exe
+All 11 original MIDI tracks are pre-rendered with [TimGM6mb](https://packages.debian.org/timgm6mb-soundfont) into a compact `data/timgm.dat` (~386 KiB), so neither FluidSynth nor a SoundFont is needed on the console. If that file is missing, a simpler built-in synthesizer takes over. TimGM6mb is not identical to the K800i's own synth.
+
+Only the main-menu theme loops; levels have sound effects but no background music, which matches the original K800i build.
+
+To rebuild the audio cache you need FluidSynth, FFmpeg and `TimGM6mb.sf2`:
+
+```sh
+python3 psp/bake_timgm.py God-of-War-Betrayal_K800i_v1420.jar /path/to/TimGM6mb.sf2 PSP/GAME/GOWBETRAYAL
 ```
 
-To build the same package that gets released, run
-`betrayal\port\build_dist.bat <version>` and then
-`betrayal\port\check_dist.ps1`, which confirms that no game data or VC runtime
-slipped in. The output is in `betrayal\port\dist\`.
+## Languages
 
-## Releases and self-update
+Russian and Ukrainian were added, with Cyrillic glyphs drawn to match the original font's height, serifs and palette. Their menus, dialogue and hints are translated; the original logo and credits are preserved. On the language screen scroll down with the D-pad and confirm with Cross. The choice is saved.
 
-Pushing a tag such as `gow-v1.2.3` runs the release workflow
-(`.github/workflows/release.yml`), which builds, checks and publishes the zip.
-The tag sets the version, and any `0.x` or suffixed version is marked as a
-pre-release.
+Help text and in-game control hints use PSP button names (□ × ○ △, D-pad, L/R) in **all eight languages**. Outside those instructions the six original language tables are unchanged. Translation sources live in `psp/locales.tsv` and `psp/controls_psp.tsv`; both are compiled into C++ by `psp/gen_locales.py`.
 
-The launcher finds updates by listing this repository's releases and taking
-the newest `gow-v` tag that has a `.zip` attached. Keeping updates working for
-people who already have the game means:
+## Build
 
-- **Do not rename or move the repository.** The owner and repository name
-  (`samioan/gow-betrayal-remastered`) are compiled into every released launcher.
-- Keep the `gow-v` tag prefix, and keep a `.zip` on each release.
+Requires the pspdev toolchain (psp-gcc 15.x), `make`, `python3` and `zlib`. Build from WSL or Linux:
 
-## Legal
+```sh
+export PSPDEV="$HOME/pspdev"          # adjust if installed elsewhere
+export PATH="$PSPDEV/bin:$PATH"
+make build
+```
 
-This project is not affiliated with, endorsed by, or supported by Sony
-Interactive Entertainment, Santa Monica Studio, Glu Mobile, Metaflow, or the
-game's original developers and publishers. *God of War* is a trademark of Sony
-Interactive Entertainment LLC. See [NOTICE.md](NOTICE.md) for attribution and
-third-party licences.
+The top-level `Makefile` wraps `psp/Makefile`; the output is `psp/EBOOT.PBP`. Optional XMB artwork can be dropped into `artwork/` (`icon0.png`, `ICON1.PMF`, `pic1.png`, `SND0.at3`) before building — otherwise those PBP members are left empty. The checked-in `dist/EBOOT.PBP` includes the artwork supplied for this build.
+
+Host-side checks (no PSP toolchain needed):
+
+```sh
+make test
+```
+
+They verify clipped/mirrored blits, the 480×272 framebuffer layout, every Cyrillic glyph and all eight control-guide tables.
+
+An automated PPSSPP smoke test runs headless under Xvfb and does not open a window on the desktop:
+
+```sh
+xvfb-run -a python3 psp/smoke_ppsspp.py \
+  /path/to/PPSSPPSDL dist test-output/run --layout portable --stage story --language 6
+```
+
+`--language` selects 0–7 (six original languages, Russian, Ukrainian); `--stage help` opens the help panel; `--skip-intro` skips `INTRO.BIN`.
+
+The game writes `gow-psp.log` and, on Java-style exceptions, `exceptions.log` next to `EBOOT.PBP`.
+
+## License and attribution
+
+See [NOTICE.md](NOTICE.md). No original game data is committed here. The upstream PC port does not declare a license in its repository; confirm the terms you want to publish under before making the fork public. Guidance for PSP-specific work came from [SandstoneDev/psp-developer](https://github.com/SandstoneDev/psp-developer).
+
+This project is not affiliated with, endorsed by, or supported by Sony Interactive Entertainment, Santa Monica Studio, Glu Mobile, Metaflow or the game's original developers and publishers. *God of War* is a trademark of Sony Interactive Entertainment LLC.

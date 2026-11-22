@@ -1,44 +1,40 @@
 # Notices and attribution
 
-This project is a from-scratch, behavioural re-implementation of
-*God of War: Betrayal* (the 2007 J2ME/mobile Java game by Glu Mobile,
-built by Metaflow), written by reading the original game's own decompiled
-bytecode (see `betrayal/docs/`). It is not affiliated with, endorsed by, or
-supported by Sony Interactive Entertainment, Santa Monica Studio, Glu
-Mobile, Metaflow, or the game's original developers and publishers.
+This repository is a native PSP port of *God of War: Betrayal*, the 2007 J2ME/mobile Java game by Glu Mobile, built by Metaflow. The game logic comes from the from-scratch behavioural re-implementation in [samioan/gow-betrayal-remastered](https://github.com/samioan/gow-betrayal-remastered) (`bad458d`), which was written by reading the original game's decompiled bytecode. The PSP-specific layer in `psp/` replaces that project's Win32 shell.
 
-## What this project does not contain, and never will
+It is not affiliated with, endorsed by, or supported by Sony Interactive Entertainment, Santa Monica Studio, Glu Mobile, Metaflow, or the game's original developers and publishers.
 
-**The game.** No script, image, sound, string table or byte of the original
-`God-of-War-Betrayal_*.jar` release is committed here, and none is
-distributed with any release. See `.gitignore`. The Java under
-`betrayal/decompiled/` and `betrayal/src/` is decompiler output kept as the
-record of the reverse engineering, and the released executables contain code
-derived from it. Neither can run without the original game data, which you
-supply yourself.
+## What is not included
 
-## Artwork and third-party code
+**The game.** No script, image, sound, string table or byte of the original `God-of-War-Betrayal_*.jar` release is committed here, and none is distributed with any release. `src/gen/` is generated C++ derived from decompiler output; it cannot run without the original resource banks, which you supply yourself with `psp/prepare_data.py`. `data/`, `timgm.dat`, `INTRO.BIN`, `artwork/` and `saves/` are gitignored.
 
-The launcher's background and icon are the game's promo art, supplied by the
-project owner (`betrayal/port/src/launcher/assets/banner_source.png`; the
-`banner.png` and `gow.ico` files are generated from it by
-`tools/make_banner.py` / `tools/make_icon.py`). `.github/social-preview.jpg`
-is made from the same image. The "God of War" wordmark and Kratos in it
-belong to their owners.
+The translations in `psp/locales.tsv` and `psp/controls_psp.tsv` are text written for this port; the underlying string tables remain in the user's JAR.
 
-| Component | Licence | Where |
+## Third-party components
+
+| Component | License | Where |
 |---|---|---|
-| `stb_image` | public domain / MIT | `betrayal/port/third_party/stb/` |
-| `puff` (zlib's reference inflate) | zlib | `betrayal/port/third_party/puff/` |
-| `javalang` (dev tool only, not shipped) | MIT | used by `tools/java2cpp.py` |
-| Vineflower (dev tool only, not shipped) | Apache-2.0 | `tools/vineflower.jar` |
+| `stb_image` | public domain / MIT | `third_party/stb/` |
+| `javalang` (development tool only, not shipped) | MIT | used by the upstream translation tooling |
+| Vineflower (development tool only, not shipped) | Apache-2.0 | upstream decompiler |
+| TimGM6mb.sf2 (used offline to render `timgm.dat`) | GPL-2 | Tim Brechbill, David Bolton; <https://packages.debian.org/timgm6mb-soundfont> |
+| PSPSDK / pspdev toolchain | BSD | <https://github.com/pspdev/pspsdk> |
+| zlib | zlib | linked for intro decompression |
 
-The launcher's file picker uses `IFileOpenDialog` (COM) and its update check
-uses WinHTTP, both Windows system components. Release builds link the CRT
-statically, so no Visual C++ redistributable is needed.
+`javalang`, Vineflower, FluidSynth, FFmpeg and PPSSPP are build- or test-time tools; none is embedded in `EBOOT.PBP`.
+
+## Artwork and intro
+
+`dist/EBOOT.PBP` was built with optional XMB menu artwork (`icon0.png`, `ICON1.PMF`, `pic1.png`, `SND0.at3`) supplied by the owner of this repository. It is not committed; place your own files in `artwork/` before rebuilding. `INTRO.BIN` is likewise a local, optional PINT video file. The "God of War" wordmark and Kratos belong to their owners.
+
+## Upstream license note
+
+The upstream PC port does not declare a license in its repository. This fork grants no new rights over the upstream code or the original game. Replace this note with your chosen license for the PSP-specific additions before publishing.
+
+## Guidance
+
+PSP hardware and packaging guidance came from [SandstoneDev/psp-developer](https://github.com/SandstoneDev/psp-developer) by SandstoneDev (<https://discord.gg/wV8x46ZTDu>), distributed under the PS2RC License 1.2. No material from that repository is copied into this one.
 
 ## Trademarks
 
-"God of War" and "God of War: Betrayal" are trademarks of Sony Interactive
-Entertainment LLC. All names are used here for identification and
-documentation of the decompilation process only.
+"God of War" and "God of War: Betrayal" are trademarks of Sony Interactive Entertainment LLC. All names are used here for identification and documentation only.

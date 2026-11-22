@@ -1,0 +1,98 @@
+# PSP-specific replacements for the 15 original strings that describe phone keys.
+# [section] names identify the original language bank; \n denotes a line break.
+[English]
+114|Combat\nPress □ to attack. Tap it rapidly to chain attacks, even in midair.\n\nMovement\nUse the D-pad or analog stick to move. Press × to jump. Hold ○ to block; near a chest or lever, use ○ to interact.\n\nWeapons and magic\nPress △ or R to cycle through weapons and magic. The blade icon shows what is equipped.\n\nHealth and magic\nGreen orbs restore health; blue orbs restore magic. Find them in chests or collect them from fallen enemies.\n\nRed orbs\nSpend red orbs on upgrades. The counter is below the blade icon. Unlocking a chapter raises the total number you can collect. Once you reach the limit, no more red orbs will drop.\n\nUpgrades\nPress L or Select to open the upgrade menu. Choose a weapon or spell with the D-pad, then hold □ to spend orbs.\n\nPhoenix feathers and Gorgon eyes\nFind them in unmarked chests. A feather permanently raises maximum magic; an eye permanently raises maximum health.\n\nArena\nDefeat as many enemies as you can without dying. As you defeat them, doors to higher levels open. The kill count is at the bottom of the screen.\n\n\n
+124|^6Medusa's Gaze briefly turns enemies to stone and uses magic. Press △ or R now to select Medusa's head, then hold □ to use it.
+137|^1When an arrow appears over Argos, press ○ to start a special attack. Then follow the arrows with the D-pad.
+178|^1Run into the crate to grab it automatically. Press left or right on the D-pad to push or pull it.
+180|^1Press × again in midair to double-jump.
+181|^1A spinning arrow marks a weakened enemy. Get close and press ○ to grab him, then press left, right, or □ to finish him.
+183|^7Press △ or R now to select the skull icon, then press □ to summon the souls.
+188|^5The Blade of Artemis hits several enemies at once but uses magic. Press △ or R now to select the sword, then tap □ to attack on the ground or in the air.
+213|^1Press △ or R to cycle through weapons and magic.
+214|^4Tap □ rapidly to chain attacks. Press △ or R to continue.
+217|^1Press × to jump, then tap □ to attack in the air.
+218|^1When you see both an arrow and a swing-point marker, press × to swing from the ledge.
+219|^1When the arrow appears, press ○ to open a chest or pull a lever.
+220|^1Red chests hold orbs for upgrades. Press L or Select, choose a weapon or spell with the D-pad, then hold □ to spend orbs.
+255|^1Run into the statue to grab it automatically. Press left or right on the D-pad to push or pull it.
+[French]
+114|Combat\nAppuie sur □ pour attaquer. Appuie vite plusieurs fois pour enchaîner les coups, même en l'air.\n\nDéplacement\nDéplace Kratos avec la croix directionnelle ou le stick analogique. Appuie sur × pour sauter. Maintiens ○ pour parer. Près d'un coffre ou d'un levier, ○ permet aussi d'interagir.\n\nArmes et magie\nAppuie sur △ ou R pour changer d'arme ou de sort. Le choix actuel apparaît sur l'icône des lames.\n\nSanté et magie\nLes orbes vertes restaurent la santé et les bleues restaurent la magie. Ramasse-les dans les coffres ou après avoir vaincu des ennemis.\n\nOrbes rouges\nElles servent aux améliorations. Le compteur est sous l'icône des lames. Chaque chapitre débloqué augmente le nombre total d'orbes à récolter. Une fois la limite atteinte, il n'en tombe plus.\n\nAméliorations\nAppuie sur L ou Select. Choisis une arme ou un sort avec la croix directionnelle, puis maintiens □ pour dépenser des orbes.\n\nPlumes de Phénix et yeux de Gorgone\nCherche-les dans les coffres sans marque. Les plumes augmentent définitivement la réserve de magie, les yeux celle de santé.\n\nArène\nBats le plus d'ennemis possible sans mourir. Tes victoires ouvrent les portes vers les étages supérieurs. Le nombre d'ennemis battus s'affiche en bas de l'écran.\n\n\n
+124|^6Le regard de Méduse pétrifie brièvement les ennemis mais consomme de la magie. Appuie sur △ ou R pour choisir la tête de Méduse, puis maintiens □.
+137|^1Quand une flèche apparaît au-dessus d'Argos, appuie sur ○ pour lancer une attaque spéciale. Suis ensuite les flèches avec la croix directionnelle.
+178|^1Cours contre la caisse pour la saisir, puis appuie à gauche ou à droite pour la pousser ou la tirer.
+180|^1Appuie de nouveau sur × en l'air pour faire un double saut.
+181|^1Une flèche tournante indique un ennemi affaibli. Approche-toi, saisis-le avec ○, puis appuie à gauche, à droite ou sur □ pour l'achever.
+183|^7Appuie sur △ ou R pour choisir le crâne, puis sur □ pour invoquer les âmes.
+188|^5La lame d'Artémis touche plusieurs ennemis à la fois mais consomme de la magie. Choisis l'épée avec △ ou R, puis appuie vite sur □ pour attaquer au sol ou en l'air.
+213|^1Appuie sur △ ou R pour changer d'arme ou de sort.
+214|^4Appuie vite sur □ pour enchaîner les coups. Appuie sur △ ou R pour continuer.
+217|^1Appuie sur × pour sauter, puis vite sur □ pour attaquer en l'air.
+218|^1Quand la flèche et le repère de balancement sont visibles, appuie sur × pour te balancer depuis le rebord.
+219|^1Quand la flèche apparaît, appuie sur ○ pour ouvrir un coffre ou actionner un levier.
+220|^1Les coffres rouges contiennent des orbes d'amélioration. Appuie sur L ou Select, choisis une arme ou un sort, puis maintiens □ pour dépenser des orbes.
+255|^1Cours contre la statue pour la saisir, puis appuie à gauche ou à droite pour la pousser ou la tirer.
+[Spanish]
+114|Combate\nPulsa □ para atacar. Púlsalo varias veces seguidas para encadenar golpes, incluso en el aire.\n\nMovimiento\nMueve a Kratos con la cruceta o el stick analógico. Pulsa × para saltar. Mantén ○ para bloquear; cerca de un cofre o una palanca, pulsa ○ para interactuar.\n\nArmas y magia\nPulsa △ o R para cambiar de arma o hechizo. El icono de las hojas muestra qué llevas equipado.\n\nSalud y magia\nLas esferas verdes restauran la salud y las azules, la magia. Recógelas de los enemigos derrotados o búscalas en cofres.\n\nEsferas rojas\nSe usan para mejorar armas y magia. El contador está bajo el icono de las hojas. Cada capítulo desbloqueado aumenta el límite total. Al alcanzarlo, dejan de aparecer esferas rojas.\n\nMejoras\nPulsa L o Select. Elige un arma o hechizo con la cruceta y mantén □ para gastar esferas.\n\nPlumas de Fénix y ojos de Gorgona\nEstán en cofres sin marcar. Una pluma aumenta para siempre la magia máxima y un ojo aumenta la salud máxima.\n\nArena\nDerrota a tantos enemigos como puedas sin morir. Las victorias abren el acceso a los pisos superiores. El total de bajas aparece al pie de la pantalla.\n\n\n
+124|^6La mirada de Medusa petrifica brevemente a los enemigos y consume magia. Elige su cabeza con △ o R y mantén □ para usarla.
+137|^1Cuando aparezca una flecha sobre Argos, pulsa ○ para iniciar un ataque especial. Sigue las flechas con la cruceta.
+178|^1Corre contra la caja para agarrarla. Pulsa izquierda o derecha para empujarla o tirar de ella.
+180|^1Pulsa × otra vez en el aire para hacer un salto doble.
+181|^1Una flecha giratoria indica que un enemigo está debilitado. Acércate y pulsa ○ para agarrarlo. Pulsa izquierda, derecha o □ para rematarlo.
+183|^7Pulsa △ o R hasta que aparezca la calavera y después pulsa □ para invocar las almas.
+188|^5La espada de Artemisa alcanza a varios enemigos a la vez, pero consume magia. Elige la espada con △ o R, luego pulsa □ rápidamente en el suelo o en el aire.
+213|^1Pulsa △ o R para cambiar de arma o hechizo.
+214|^4Pulsa □ rápidamente para encadenar golpes. Pulsa △ o R para continuar.
+217|^1Pulsa × para saltar y luego □ varias veces para atacar en el aire.
+218|^1Cuando veas la flecha y la marca de balanceo a la vez, pulsa × para balancearte desde el saliente.
+219|^1Cuando aparezca una flecha, pulsa ○ para abrir el cofre o accionar la palanca.
+220|^1Los cofres rojos contienen esferas para mejorar armas y magia. Pulsa L o Select, elige un arma o hechizo con la cruceta y mantén □ para gastar esferas.
+255|^1Corre contra la estatua para agarrarla. Pulsa izquierda o derecha para empujarla o tirar de ella.
+[German]
+114|Kampf\nDrücke □ zum Angreifen. Drücke die Taste mehrmals schnell, um Schläge zu verketten. Das geht auch in der Luft.\n\nBewegung\nBewege Kratos mit dem Steuerkreuz oder Analogstick. Drücke × zum Springen. Halte ○ zum Blocken. In der Nähe von Truhen und Hebeln kannst du mit ○ interagieren.\n\nWaffen und Magie\nWechsle mit △ oder R die Waffe oder den Zauber. Im Klingensymbol siehst du deine aktuelle Wahl.\n\nGesundheit und Magie\nGrüne Kugeln füllen die Gesundheit auf, blaue Kugeln die Magie. Sammle sie nach Kämpfen oder finde sie in Truhen.\n\nRote Kugeln\nMit roten Kugeln verbesserst du Waffen und Magie. Der Zähler steht unter dem Klingensymbol. Jedes freigeschaltete Kapitel erhöht die Sammelgrenze. Ist sie erreicht, erscheinen keine weiteren roten Kugeln.\n\nVerbesserungen\nDrücke L oder Select. Wähle mit dem Steuerkreuz eine Waffe oder einen Zauber und halte □, um Kugeln auszugeben.\n\nPhönixfedern und Gorgonenaugen\nSuche sie in unmarkierten Truhen. Eine Feder erhöht dauerhaft die maximale Magie, ein Auge die maximale Gesundheit.\n\nArena\nBesiege so viele Gegner wie möglich, ohne zu sterben. Siege öffnen Türen zu höheren Etagen. Der Zähler steht unten auf dem Bildschirm.\n\n\n
+124|^6Medusas Blick versteinert Gegner kurzzeitig und verbraucht Magie. Wähle Medusas Haupt mit △ oder R und halte dann □ gedrückt.
+137|^1Erscheint ein Pfeil über Argos, starte mit ○ einen Spezialangriff. Folge dann den Pfeilen mit dem Steuerkreuz.
+178|^1Lauf gegen die Kiste, um sie zu greifen. Drücke links oder rechts, um sie zu schieben oder zu ziehen.
+180|^1Drücke in der Luft erneut × für einen Doppelsprung.
+181|^1Ein drehender Pfeil markiert einen geschwächten Feind. Geh nah heran und greife ihn mit ○. Drücke zum Abschluss links, rechts oder □.
+183|^7Wähle mit △ oder R den Schädel und drücke dann □, um die Seelen zu rufen.
+188|^5Die Klinge der Artemis trifft mehrere Gegner, kostet aber Magie. Wähle das Schwert mit △ oder R und drücke rasch □, um am Boden oder in der Luft anzugreifen.
+213|^1Wechsle mit △ oder R die Waffe oder den Zauber.
+214|^4Drücke □ schnell hintereinander für eine Kombo. Drücke △ oder R, um fortzufahren.
+217|^1Springe mit × und drücke dann rasch □, um in der Luft anzugreifen.
+218|^1Wenn Pfeil und Schwingpunkt zugleich erscheinen, drücke ×, um dich vom Vorsprung zu schwingen.
+219|^1Wenn ein Pfeil erscheint, drücke ○, um eine Truhe zu öffnen oder einen Hebel zu ziehen.
+220|^1Rote Truhen enthalten Kugeln für Verbesserungen. Drücke L oder Select, wähle eine Waffe oder einen Zauber und halte □, um Kugeln auszugeben.
+255|^1Lauf gegen die Statue, um sie zu greifen. Drücke links oder rechts, um sie zu schieben oder zu ziehen.
+[Italian]
+114|Combattimento\nPremi □ per attaccare. Premilo più volte in rapida successione per concatenare i colpi, anche in aria.\n\nMovimento\nMuovi Kratos con la croce direzionale o lo stick analogico. Premi × per saltare. Tieni premuto ○ per parare. Vicino a uno scrigno o a una leva, usa ○ per interagire.\n\nArmi e magia\nPremi △ o R per cambiare arma o incantesimo. L'icona delle lame mostra la scelta attuale.\n\nSalute e magia\nLe sfere verdi ripristinano la salute, quelle blu la magia. Raccoglile dai nemici sconfitti o cercale negli scrigni.\n\nSfere rosse\nServono per i potenziamenti. Il contatore è sotto l'icona delle lame. Ogni capitolo sbloccato aumenta il limite totale di sfere. Raggiunto il limite, non ne compariranno altre.\n\nPotenziamenti\nPremi L o Select. Scegli un'arma o un incantesimo con la croce direzionale e tieni premuto □ per spendere le sfere.\n\nPiume di Fenice e occhi di Gorgone\nCercali negli scrigni senza contrassegno. Una piuma aumenta per sempre la magia massima, un occhio la salute massima.\n\nArena\nSconfiggi più nemici che puoi senza morire. Le vittorie aprono le porte ai piani superiori. In basso trovi il numero di nemici sconfitti.\n\n\n
+124|^6Lo sguardo di Medusa pietrifica brevemente i nemici e consuma magia. Seleziona la testa con △ o R, poi tieni premuto □ per usarla.
+137|^1Quando compare una freccia sopra Argo, premi ○ per iniziare un attacco speciale. Segui le frecce con la croce direzionale.
+178|^1Corri contro la cassa per afferrarla. Premi sinistra o destra per spingerla o tirarla.
+180|^1Premi di nuovo × mentre sei in aria per fare un doppio salto.
+181|^1Una freccia rotante indica un nemico indebolito. Avvicinati, afferralo con ○ e finiscilo premendo sinistra, destra o □.
+183|^7Premi △ o R per scegliere il teschio, poi premi □ per evocare le anime.
+188|^5La spada di Artemide colpisce più nemici, ma consuma magia. Seleziona la spada con △ o R e premi rapidamente □ per attaccare a terra o in aria.
+213|^1Premi △ o R per cambiare arma o incantesimo.
+214|^4Premi rapidamente □ per concatenare i colpi. Premi △ o R per continuare.
+217|^1Premi × per saltare, poi premi rapidamente □ per attaccare in aria.
+218|^1Quando compaiono sia la freccia sia il punto di oscillazione, premi × per dondolarti dal bordo.
+219|^1Quando compare una freccia, premi ○ per aprire lo scrigno o azionare la leva.
+220|^1Gli scrigni rossi contengono sfere per i potenziamenti. Premi L o Select, scegli un'arma o un incantesimo e tieni premuto □ per spendere le sfere.
+255|^1Corri contro la statua per afferrarla. Premi sinistra o destra per spingerla o tirarla.
+[Portuguese]
+114|Combate\nCarrega em □ para atacar. Carrega várias vezes seguidas para encadear golpes, mesmo no ar.\n\nMovimento\nMove o Kratos com o direcional ou o manípulo analógico. Carrega em × para saltar. Mantém ○ premido para bloquear. Junto de um baú ou de uma alavanca, carrega em ○ para interagir.\n\nArmas e magia\nCarrega em △ ou R para mudar de arma ou feitiço. O ícone das lâminas mostra o que tens equipado.\n\nSaúde e magia\nAs esferas verdes restauram a saúde e as azuis restauram a magia. Recolhe-as nos baús ou dos inimigos derrotados.\n\nEsferas vermelhas\nServem para melhorar armas e magia. O contador fica por baixo do ícone das lâminas. Cada capítulo desbloqueado aumenta o limite total. Depois de atingires o limite, deixam de aparecer esferas vermelhas.\n\nMelhorias\nCarrega em L ou Select. Escolhe uma arma ou um feitiço com o direcional e mantém □ premido para gastar esferas.\n\nPenas de Fénix e olhos de Górgona\nProcura-os em baús sem marca. Uma pena aumenta para sempre a magia máxima; um olho aumenta a saúde máxima.\n\nArena\nDerrota o maior número possível de inimigos sem morreres. As vitórias abrem portas para os pisos superiores. O total de inimigos derrotados aparece no fundo do ecrã.\n\n\n
+124|^6O olhar da Medusa transforma os inimigos em pedra por instantes e gasta magia. Escolhe a cabeça com △ ou R e mantém □ premido para a usar.
+137|^1Quando vires uma seta por cima de Argos, carrega em ○ para iniciar um ataque especial. Segue as setas com o direcional.
+178|^1Corre contra a caixa para a agarrares. Carrega à esquerda ou à direita para a empurrares ou puxares.
+180|^1Carrega novamente em × no ar para dar um salto duplo.
+181|^1Uma seta a girar indica um inimigo enfraquecido. Aproxima-te, agarra-o com ○ e carrega à esquerda, à direita ou em □ para o finalizares.
+183|^7Carrega em △ ou R para escolher a caveira e depois em □ para invocar as almas.
+188|^5A espada de Ártemis atinge vários inimigos de uma vez, mas gasta magia. Escolhe a espada com △ ou R e carrega rapidamente em □ para atacar no chão ou no ar.
+213|^1Carrega em △ ou R para mudar de arma ou feitiço.
+214|^4Carrega rapidamente em □ para encadear golpes. Carrega em △ ou R para continuar.
+217|^1Carrega em × para saltar e depois rapidamente em □ para atacar no ar.
+218|^1Quando vires a seta e o ponto de balanço ao mesmo tempo, carrega em × para te baloiçares a partir da saliência.
+219|^1Quando aparecer uma seta, carrega em ○ para abrir o baú ou puxar a alavanca.
+220|^1Os baús vermelhos têm esferas para melhorias. Carrega em L ou Select, escolhe uma arma ou um feitiço e mantém □ premido para gastar esferas.
+255|^1Corre contra a estátua para a agarrares. Carrega à esquerda ou à direita para a empurrares ou puxares.
